@@ -1,0 +1,11 @@
+https://kr.vuejs.org/v2/guide/instance.html#속성과-메소드
+  ? 각 Vue 인스턴스는 data 객체에 있는 모든 속성을 프록시 처리 합니다.
+
+  ? 이러한 프록시 속성은 반응형 입니다.
+    인스턴스를 작성한 후 인스턴스에 새 특성을 첨부하면 뷰 업데이트가 트리거되지 않습니다.
+
+  ? $watch
+    script 상에서의 빠른 변화에서는 1번만 호출이 됨. why?
+
+https://kr.vuejs.org/v2/guide/instance.html#라이프사이클-다이어그램
+
