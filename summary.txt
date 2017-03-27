@@ -9,3 +9,9 @@ https://kr.vuejs.org/v2/guide/instance.html#속성과-메소드
 
 https://kr.vuejs.org/v2/guide/instance.html#라이프사이클-다이어그램
 
+https://kr.vuejs.org/v2/guide/syntax.html#수식어
+  수식어는 점으로 표시되는 특수 접미사로, 디렉티브를 특별한 방법으로 바인딩 해야 함을 나타냅니다.
+  예를 들어, .prevent 수식어는 트리거된 이벤트에서 event.preventDefault()를 호출하도록
+  v-on을 디렉티브에 알려줍니다.
+    <form v-on:submit.prevent="onSubmit"></form>
+
