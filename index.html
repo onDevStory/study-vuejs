@@ -9,8 +9,11 @@
 
 <body>
     <div id="example">
+        <h2 :id="id.title">Template Syntax</h2>
         <p v-once>one-time interpolations (This will never change): {{ msg }}</p>
         <div v-html="html.aa"></div>
+        <button v-bind:disabled="buttonFlag">Button</button>
+        <button :disabled="getBoolean()">Button</button>
     </div>
 
     <!-- where the rear which dom rendering is completed -->

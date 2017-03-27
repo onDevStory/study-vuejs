@@ -23,6 +23,15 @@ var vm = new Vue({
 		msg: 'Hello World.',
 		html: {
 			aa: '<p>This element has v-html. {{msg}}. data bindings are ignored.</p>'
+		},
+		id: {
+			title: 'title'
+		},
+		buttonFlag: false
+	},
+	methods: {
+		getBoolean: function() {
+			return true;
 		}
 	}
 })
