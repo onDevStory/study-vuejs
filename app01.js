@@ -20,6 +20,9 @@ var vm = new Vue({
 	},
 	el: '#example',
 	data: {
-		msg: 'Hello World.'
+		msg: 'Hello World.',
+		html: {
+			aa: '<p>This element has v-html. {{msg}}. data bindings are ignored.</p>'
+		}
 	}
 })
