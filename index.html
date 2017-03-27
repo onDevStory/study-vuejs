@@ -9,11 +9,14 @@
 
 <body>
     <div id="example">
-        <h2 :id="id.title">Template Syntax</h2>
+        <h2 :id="'h2-' + id.title">Template Syntax</h2>
         <p v-once>one-time interpolations (This will never change): {{ msg }}</p>
         <div v-html="html.aa"></div>
         <button v-bind:disabled="buttonFlag">Button</button>
         <button :disabled="getBoolean()">Button</button>
+        <p>{{msg.split('').reverse().join('')}}</p>
+        <p>{{true? true:false}}</p>
+        <p>{{Math.random()}}</p>
     </div>
 
     <!-- where the rear which dom rendering is completed -->
