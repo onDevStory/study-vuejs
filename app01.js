@@ -33,5 +33,15 @@ var vm = new Vue({
 		getBoolean: function() {
 			return true;
 		}
+	},
+	filters: {
+		capitalize: function(value) {
+			if (!value) return '';
+			value = value.toString();
+			return value.charAt(0).toUpperCase() + value.slice(1);
+		},
+		append: function(value, item) {
+			return value + item;
+		}
 	}
 })

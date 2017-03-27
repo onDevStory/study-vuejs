@@ -15,3 +15,7 @@ https://kr.vuejs.org/v2/guide/syntax.html#수식어
   v-on을 디렉티브에 알려줍니다.
     <form v-on:submit.prevent="onSubmit"></form>
 
+Shorthands (약어)
+  가장 자주 사용되는 두개의 디렉티브인 v-bind와 v-on에 대해 특별한 약어를 제공합니다.
+    <a v-on:click="doSomething"></a>    =>         <a @click="doSomething"></a>
+    <a v-bind:href="url"></a>           =>         <a :href="url"></a>

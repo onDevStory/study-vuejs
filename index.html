@@ -15,7 +15,7 @@
         <button v-bind:disabled="buttonFlag">Button</button>
         <button :disabled="getBoolean()">Button</button>
         <p>{{msg.split('').reverse().join('')}}</p>
-        <p>{{true? true:false}}</p>
+        <p>{{true? true:false | capitalize | append('★')}}</p>
         <p>{{Math.random()}}</p>
         modify the value of buttonFlag
         <button v-if="buttonFlag">보인다</button>
