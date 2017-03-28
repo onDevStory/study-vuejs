@@ -88,4 +88,10 @@ https://kr.vuejs.org/v2/guide/class-and-style.html#HTML-클래스-바인딩하�
 https://kr.vuejs.org/v2/guide/class-and-style.html#배열-구문-1
   https://kr.vuejs.org/v2/guide/class-and-style.html#자동-접두사
 
-  
+https://vuejs.org/v2/guide/conditional.html#v-if-vs-v-show
+  Generally speaking, v-if has higher toggle costs while v-show has higher initial render costs.
+  So prefer v-show if you need to toggle something very often,
+  and prefer v-if if the condition is unlikely to change at runtime.
+
+https://vuejs.org/v2/guide/conditional.html#v-if-with-v-for
+  When used together with v-for, v-for has a higher priority than v-if.
