@@ -85,6 +85,80 @@
                 </span>
             </div>
         </details>
+
+        <details>
+            <summary>v-if</summary>
+            <div>
+                A v-else element must immediately follow a v-if or a v-else-if element
+                <br>- otherwise it will not be recognized.
+                <div v-if="ok">Yes</div>
+                <div v-else>No</div>
+            </div>
+            <hr>
+            <div>
+                we can use v-if on a &lt template&gt element, which serves as an invisible wrapper.
+                <br>The final rendered result will not include the &lttemplate&gt element.
+                <br>
+                <template>
+                    Check it source-code out for yourself for this and below.
+                    <br> template tag is not exist.
+                </template>
+                <template v-if="ok">
+                    <div>Title</div>
+                    <span>Paragraph 1</span>
+                    <br>
+                    <span>Paragraph 2</span>
+                </template>
+            </div>
+            <hr>
+            <div>
+                <div v-if="type === 'A'">
+                    A
+                </div>
+                <div v-else-if="type === 'B'">
+                    B
+                </div>
+                <div v-else-if="type === 'C'">
+                    C
+                </div>
+                <div v-else>
+                    Not A/B/C
+                </div>
+            </div>
+            <hr>
+            <div>
+                Switching the loginType in the code above will not erase
+                <br> what the user has already entered.
+                <br> Since both templates use the same elements, the &ltinput&gt is not replaced - just its placeholder.
+                <br>
+                <template v-if="loginType === 'username'">
+                    <label>Username</label>
+                    <input placeholder="Enter your username">
+                </template>
+                <template v-else>
+                    <label>Email</label>
+                    <input placeholder="Enter your email address">
+                </template>
+                <br>
+                <br> To don't re-use them, Just add a key attribute with unique values.
+                <br> Note that the &ltlabel&gt elements are still efficiently re-used,
+                <br>because they don’t have key attributes.
+                <br>
+                <template v-if="loginType === 'username'">
+                    <label>Username</label>
+                    <input placeholder="Enter your username" key="username-input">
+                </template>
+                <template v-else>
+                    <label>Email</label>
+                    <input placeholder="Enter your email address" key="email-input">
+                </template>
+                <br>
+                <button v-on:click="loginType=='username'? loginType='email':loginType='username'">
+                    Toggle loginType
+                </button>
+            </div>
+
+        </details>
     </div>
 
     <!-- where the rear which dom rendering is completed -->

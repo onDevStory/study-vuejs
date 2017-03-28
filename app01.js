@@ -44,7 +44,10 @@ var vm = new Vue({
 		styleObject: {
 			color: 'red',
 			fontSize: '13px'
-		}
+		},
+		ok: true,
+		type: 'A',
+		loginType: 'username'
 	},
 	methods: {
 		getBoolean: function() {
