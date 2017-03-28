@@ -38,6 +38,12 @@ var vm = new Vue({
 		classArray: {
 			activeClass: 'active',
 			errorClass: 'text-danger'
+		},
+		activeColor: 'red',
+		fontSize: 17,
+		styleObject: {
+			color: 'red',
+			fontSize: '13px'
 		}
 	},
 	methods: {
@@ -64,6 +70,19 @@ var vm = new Vue({
 			return {
 				active: this.isActive && !this.error,
 				'text-danger': this.error && this.error.type === 'fatal'
+			}
+		},
+		computedStyle: function() {
+			if (this.isActive) {
+				return {
+					color: 'blue',
+					fontSize: '17px'
+				}
+			} else {
+				return {
+					color: 'red',
+					fontSize: '20px'
+				}
 			}
 		}
 	}

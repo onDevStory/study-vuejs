@@ -84,3 +84,8 @@ https://kr.vuejs.org/v2/guide/computed.html#감시자 !!
 
 https://kr.vuejs.org/v2/guide/class-and-style.html#HTML-클래스-바인딩하기
   https://kr.vuejs.org/v2/guide/class-and-style.html#컴포넌트와-함께-사용하는-방법
+
+https://kr.vuejs.org/v2/guide/class-and-style.html#배열-구문-1
+  https://kr.vuejs.org/v2/guide/class-and-style.html#자동-접두사
+
+  

@@ -58,6 +58,33 @@
                 <br> It is possible to use the object syntax inside array syntax
             </div>
         </details>
+
+        <details>
+            <summary>Binding Inline Styles</summary>
+            <div>
+                You can use either camelCase or kebab-case (use quotes with kebab-case) for the CSS property names:
+                <br>
+                <span :style="{ color: activeColor, fontSize: fontSize + 'px' }">
+                    :style="{ color: activeColor, fontSize: fontSize + 'px' }"
+                </span>
+            </div>
+            <hr>
+            <div>
+                It is often a good idea to bind to a style object directly so that the template is cleaner:
+                <br>
+                <span :style="styleObject">
+                    :style="styleObject"
+                </span>
+            </div>
+            <hr>
+            <div>
+                Again, the object syntax is often used in conjunction with computed properties that return objects.
+                <br>
+                <span :style="computedStyle">
+                    :style="computedStyle"
+                </span>
+            </div>
+        </details>
     </div>
 
     <!-- where the rear which dom rendering is completed -->
