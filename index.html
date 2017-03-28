@@ -9,52 +9,55 @@
 
 <body>
     <div id="example">
-        <h2 :id="'h2-' + id.title">Template Syntax</h2>
-        <p v-once>one-time interpolations (This will never change): {{ msg }}</p>
-        <div v-html="html.aa"></div>
-        <button v-bind:disabled="buttonFlag">Button</button>
-        <!-- v-bind 에서 method 사용 시에는 () 생략 가능하네 -->
-        <button :disabled="getBoolean">Button</button>
-        <button :disabled="!getBoolean()">Button</button>
-        <p>{{true? true:false | capitalize | append('★')}}</p>
-        <p>{{Math.random()}}</p>
-        modify the value of buttonFlag
-        <button v-if="buttonFlag">보인다</button>
-        <p>Original message: "{{ msg }}"</p>
-        <p>Using In-template expressions: {{msg.split('').reverse().join('')}}</p>
-        <p>Using computed properties: "{{ reversedMessage }}"</p>
+        <details>
+            <summary :id="'h2-' + id.title">Template Syntax</summary>
+            <p v-once>one-time interpolations (This will never change): {{ msg }}</p>
+            <div v-html="html.aa"></div>
+            <button v-bind:disabled="buttonFlag">Button</button>
+            <!-- v-bind 에서 method 사용 시에는 () 생략 가능하네 -->
+            <button :disabled="getBoolean">Button</button>
+            <button :disabled="!getBoolean()">Button</button>
+            <p>{{true? true:false | capitalize | append('★')}}</p>
+            <p>{{Math.random()}}</p>
+            modify the value of buttonFlag
+            <button v-if="buttonFlag">보인다</button>
+            <p>Original message: "{{ msg }}"</p>
+            <p>Using In-template expressions: {{msg.split('').reverse().join('')}}</p>
+            <p>Using computed properties: "{{ reversedMessage }}"</p>
+        </details>
 
-        <h2>Binding HTML Classes</h2>
-        <h3>Object Syntax</h3>
-        <div :class="{ active: isActive }">
-            :class="{ active: isActive }"
-        </div>
-        <div class="static" :class="{ active: isActive, 'text-danger': hasError }">
-            :class="{ active: isActive, 'text-danger': hasError }"
-        </div>
-        <hr>
-        <div :class="classObject">
-            The bound object doesn’t have to be inline: This will render the same result.
-        </div>
-        <hr>
-        <div :class="computedClass">
-            We can also bind to a computed property that returns an object.
-            <br> This is a common and powerful pattern: ★ Not Working...
-        </div>
-        <h3>ArraySyntax</h3>
-        <div :class="[classArray.activeClass, classArray.errorClass]">
-            BASIC - :class="[classArray.activeClass, classArray.errorClass]"
-        </div>
-        <hr>
-        <div class="static" :class="[classArray.errorClass, isActive? classArray.activeClass:'']">
-            BAD - :class="static" :class="[classArray.errorClass, isActive? classArray.activeClass:'']"
-        </div>
-        <hr>
-        <div class="static" :class="[classArray.errorClass, {active: isActive}]">
-            GOOD - :class="static" :class="[classArray.errorClass, {active: isActive}]"
-            <br> It is possible to use the object syntax inside array syntax
-        </div>
+        <details>
+            <summary>Binding HTML Classes</summary>
 
+            <div :class="{ active: isActive }">
+                :class="{ active: isActive }"
+            </div>
+            <div class="static" :class="{ active: isActive, 'text-danger': hasError }">
+                :class="{ active: isActive, 'text-danger': hasError }"
+            </div>
+            <hr>
+            <div :class="classObject">
+                The bound object doesn’t have to be inline: This will render the same result.
+            </div>
+            <hr>
+            <div :class="computedClass">
+                We can also bind to a computed property that returns an object.
+                <br> This is a common and powerful pattern: ★ Not Working...
+            </div>
+            <hr>
+            <div :class="[classArray.activeClass, classArray.errorClass]">
+                BASIC - :class="[classArray.activeClass, classArray.errorClass]"
+            </div>
+            <hr>
+            <div class="static" :class="[classArray.errorClass, isActive? classArray.activeClass:'']">
+                BAD - :class="static" :class="[classArray.errorClass, isActive? classArray.activeClass:'']"
+            </div>
+            <hr>
+            <div class="static" :class="[classArray.errorClass, {active: isActive}]">
+                GOOD - :class="static" :class="[classArray.errorClass, {active: isActive}]"
+                <br> It is possible to use the object syntax inside array syntax
+            </div>
+        </details>
     </div>
 
     <!-- where the rear which dom rendering is completed -->
