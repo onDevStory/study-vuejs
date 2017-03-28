@@ -81,3 +81,6 @@ https://kr.vuejs.org/v2/guide/computed.html#계산된-속성-vs-감시된-속성
 https://kr.vuejs.org/v2/guide/computed.html#계산된-Setter !!
 
 https://kr.vuejs.org/v2/guide/computed.html#감시자 !!
+
+https://kr.vuejs.org/v2/guide/class-and-style.html#HTML-클래스-바인딩하기
+  https://kr.vuejs.org/v2/guide/class-and-style.html#컴포넌트와-함께-사용하는-방법

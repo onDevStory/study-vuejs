@@ -27,7 +27,18 @@ var vm = new Vue({
 		id: {
 			title: 'title'
 		},
-		buttonFlag: false
+		buttonFlag: false,
+		isActive: true,
+		hasError: true,
+		error: null,
+		classObject: {
+			active: true,
+			'text-danger': true,
+		},
+		classArray: {
+			activeClass: 'active',
+			errorClass: 'text-danger'
+		}
 	},
 	methods: {
 		getBoolean: function() {
@@ -48,6 +59,12 @@ var vm = new Vue({
 		// 계산된 getter
 		reversedMessage: function() {
 			return this.msg.split('').reverse().join('')
+		},
+		computedClass: function() {
+			return {
+				active: this.isActive && !this.error,
+				'text-danger': this.error && this.error.type === 'fatal'
+			}
 		}
 	}
 })
