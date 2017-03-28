@@ -100,3 +100,5 @@ https://kr.vuejs.org/v2/guide/list.html#컴포넌트와-v-for
 
 https://kr.vuejs.org/v2/guide/list.html#v-for와-v-if
 
+https://kr.vuejs.org/v2/guide/list.html#key
+
