@@ -157,7 +157,13 @@
                     Toggle loginType
                 </button>
             </div>
-
+        </details>
+        <details>
+            <summary>v-show</summary>
+            The difference is that an element with v-show will always be rendered and remain in the DOM;
+            <br>v-show simply toggles the display CSS property of the element.
+            <br>Note that v-show doesn’t support the &lttemplate&gt syntax, nor does it work with v-else.
+            <div v-show="ok">Hello!</div>
         </details>
     </div>
 
