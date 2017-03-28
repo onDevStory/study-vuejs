@@ -95,3 +95,8 @@ https://vuejs.org/v2/guide/conditional.html#v-if-vs-v-show
 
 https://vuejs.org/v2/guide/conditional.html#v-if-with-v-for
   When used together with v-for, v-for has a higher priority than v-if.
+
+https://kr.vuejs.org/v2/guide/list.html#컴포넌트와-v-for
+
+https://kr.vuejs.org/v2/guide/list.html#v-for와-v-if
+
