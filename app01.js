@@ -47,7 +47,17 @@ var vm = new Vue({
 		},
 		ok: true,
 		type: 'A',
-		loginType: 'username'
+		loginType: 'username',
+		parentMessage: 'Parent',
+		items: [
+			{ message: 'Foo' },
+			{ message: 'Bar' }
+		],
+		object: {
+			firstName: 'John',
+			lastName: 'Doe',
+			age: 30
+		}
 	},
 	methods: {
 		getBoolean: function() {
