@@ -19,3 +19,59 @@ Shorthands (약어)
   가장 자주 사용되는 두개의 디렉티브인 v-bind와 v-on에 대해 특별한 약어를 제공합니다.
     <a v-on:click="doSomething"></a>    =>         <a @click="doSomething"></a>
     <a v-bind:href="url"></a>           =>         <a :href="url"></a>
+
+https://kr.vuejs.org/v2/guide/computed.html#기본-예제
+  Computed Properties and Watchers
+    In-template expressions are very convenient, 하지만 단순한 연산에만 사용해야 합니다.
+    For any complex logic, you should use a computed property.
+    (computed 에 선언한 function 은 console 에서 vm._computedWatchers 로 찾을 수 있음)
+    
+    Here we have declared a computed property reversedMessage.
+    The function we provided will be used as the getter function for the property vm.reversedMessage:
+    You can open the console and play with the example vm yourself.
+    The value of vm.reversedMessage is always dependent on the value of vm.message.
+      console.log(vm.reversedMessage) // -> 'olleH'
+      vm.message = 'Goodbye'
+      console.log(vm.reversedMessage) // -> 'eybdooG'
+    
+    그러면 data 에 reversedMessage 란 속성을 선언하면 안되는거네..
+    속성이나 함수를 선언할 때 항상 신경써야만 되는건가..?
+
+  주의사항
+    If the function which has a same name exist in methods option...??
+      O : <p>Using computed properties: "{{ reversedMessage }}"</p> 
+      X : <p>Using computed properties: "{{ reversedMessage() }}"</p>
+          
+
+      그렇다면 In-template expressions 에서 methods 사용 시에는,
+      무조건 ()를 명시적으로 붙이고(필수), computed 는 안붙이면 되는거군!
+      그리고 reversedMessage 가 vm.reversedMessage 의 getter function 으로 사용된다는 건,
+      뭔가 logic 을 타야 되는 속성이 있을 땐 data 가 아닌 computed 에 선언하면 되는거구나!
+
+  Questions
+    methods 에 선언해 사용하는 것과 computed 에 선언해 사용하는 것 중, 선택기준은?
+
+https://kr.vuejs.org/v2/guide/computed.html#계산된-캐싱-vs-메소드
+  computed properties are cached based on their dependencies.
+  A computed property will only re-evaluate when some of its dependencies have changed.
+    var vm = new Vue({
+		  el: '#demo',
+		  data: {
+		    firstName: 'Foo',
+		    lastName: 'Bar'
+		  },
+		  computed: {
+		    fullName: function () {
+		      return this.firstName + ' ' + this.lastName
+		    }
+		  }
+		})
+    
+    fullName 은 firstName & lastName 에 종속되어 있어서,
+    의존하는 속성 값이 변경할 때마다 fullName 도 다시 계산된다.
+
+  In comparison, a method invocation will always run the function whenever a re-render happens.
+
+  In cases where you do not want caching, use a method instead.
+
+

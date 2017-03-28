@@ -13,12 +13,16 @@
         <p v-once>one-time interpolations (This will never change): {{ msg }}</p>
         <div v-html="html.aa"></div>
         <button v-bind:disabled="buttonFlag">Button</button>
-        <button :disabled="getBoolean()">Button</button>
-        <p>{{msg.split('').reverse().join('')}}</p>
+        <!-- v-bind 에서 method 사용 시에는 () 생략 가능하네 -->
+        <button :disabled="getBoolean">Button</button>
+        <button :disabled="!getBoolean()">Button</button>
         <p>{{true? true:false | capitalize | append('★')}}</p>
         <p>{{Math.random()}}</p>
         modify the value of buttonFlag
         <button v-if="buttonFlag">보인다</button>
+        <p>Original message: "{{ msg }}"</p>
+        <p>Using In-template expressions: {{msg.split('').reverse().join('')}}</p>
+        <p>Using computed properties: "{{ reversedMessage }}"</p>
     </div>
 
     <!-- where the rear which dom rendering is completed -->

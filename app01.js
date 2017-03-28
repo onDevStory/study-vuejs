@@ -43,5 +43,11 @@ var vm = new Vue({
 		append: function(value, item) {
 			return value + item;
 		}
+	},
+	computed: {
+		// 계산된 getter
+		reversedMessage: function() {
+			return this.msg.split('').reverse().join('')
+		}
 	}
 })
