@@ -74,4 +74,10 @@ https://kr.vuejs.org/v2/guide/computed.html#계산된-캐싱-vs-메소드
 
   In cases where you do not want caching, use a method instead.
 
+https://kr.vuejs.org/v2/guide/computed.html#계산된-속성-vs-감시된-속성
+  fullName 이 firstName & lastName 값의 변화에 따라 변경되야 한다면,
+  firstName & lastName 을 watch 하는 것보다는 fullName 을 computed 하는 것을 선택할 것!
 
+https://kr.vuejs.org/v2/guide/computed.html#계산된-Setter !!
+
+https://kr.vuejs.org/v2/guide/computed.html#감시자 !!
