@@ -153,3 +153,6 @@ Form Input Bindings (Basic Usage)
   It will always treat the Vue instance data as the source of truth.
   You should declare the initial value on the JavaScript side, inside the data option of your component.
 
+컴포넌트
+  Using Components
+    Registration
