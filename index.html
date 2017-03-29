@@ -235,6 +235,25 @@
                 <li v-for="n in even(numbers)">{{ n }}</li>
             </div>
         </details>
+        <hr>
+        <h2>Event Handling</h2>
+        <details>
+            <summary>Listening to Events</summary>
+            <button v-on:click="counter += 1">Add 1</button>
+            <br>
+            <p>위 버튼을 클릭한 횟수는 {{ counter }} 번 입니다.</p>
+        </details>
+        <details>
+            <summary>Method Event Handler</summary>
+            <button v-on:click="greet">Greet</button>
+        </details>
+        <details>
+            <summary>Methods in Inline Handlers</summary>
+            <button v-on:click="say('hi')">Say hi</button>
+            <button v-on:click="say('what')">Say what</button>
+            <br>
+            <button v-on:click="warn('Form cannot be submitted yet.', $event)">Submit</button>
+        </details>
     </div>
 
     <!-- where the rear which dom rendering is completed -->

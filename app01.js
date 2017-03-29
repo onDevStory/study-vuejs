@@ -58,7 +58,9 @@ var vm = new Vue({
 			lastName: 'Doe',
 			age: 30
 		},
-		numbers: [1, 2, 3, 4, 5]
+		numbers: [1, 2, 3, 4, 5],
+		counter: 0,
+		name: 'Vue.js'
 	},
 	methods: {
 		getBoolean: function() {
@@ -68,6 +70,20 @@ var vm = new Vue({
 			return numbers.filter(function(number) {
 				return number % 2 === 0
 			})
+		},
+		greet: function(event) {
+			alert('Hello ' + this.name + '!')
+			if (event) {
+				alert(event.target.tagName)
+			}
+		},
+		say: function(message) {
+			alert(message)
+		},
+		warn: function(message, event) {
+			// 이제 네이티브 이벤트에 액세스 할 수 있습니다
+			if (event) event.preventDefault()
+			alert(message)
 		}
 	},
 	filters: {
@@ -111,3 +127,6 @@ var vm = new Vue({
 		}
 	}
 })
+
+// https://vuejs.org/v2/guide/events.html#Method-Event-Handlers
+vm.greet() // -> 'Hello Vue.js!'
