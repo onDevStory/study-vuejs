@@ -254,8 +254,101 @@
             <br>
             <button v-on:click="warn('Form cannot be submitted yet.', $event)">Submit</button>
         </details>
+        <hr>
+        <h2>Form Input Bindings</h2>
+        <details>
+            <summary>Text</summary>
+            For languages that require an IME (Chinese, Japanese, Korean etc.),
+            <br>you’ll notice that v-model doesn’t get updated during IME composition.
+            <br>If you want to cater for these updates as well, use input event instead.
+            <br>한글 입력 시 늦는 현상 말하는건가?
+            <br>
+            <input v-model="message" placeholder="여기를 수정해보세요"> 메시지: {{ message }}
+        </details>
+        <details>
+            <summary>Multiline Text</summary>
+            <span>여러 줄을 가지는 메시지:</span>
+            <p style="white-space: pre">{{ longMessage }}</p>
+            <textarea v-model="longMessage" placeholder="여러줄을 입력해보세요"></textarea>
+        </details>
+        <details>
+            <summary>Checkbox</summary>
+            <input type="checkbox" id="checkbox" v-model="checked">
+            <label for="checkbox">{{ checked }}</label>
+            <hr>
+            <input type="checkbox" id="jack" value="Jack" v-model="checkedNames">
+            <label for="jack">Jack</label>
+            <input type="checkbox" id="john" value="John" v-model="checkedNames">
+            <label for="john">John</label>
+            <input type="checkbox" id="mike" value="Mike" v-model="checkedNames">
+            <label for="mike">Mike</label>
+            <br>
+            <span>체크한 이름: {{ checkedNames }}</span>
+        </details>
+        <details>
+            <summary>Radio</summary>
+            <input type="radio" id="one" value="1" v-model="picked">
+            <label for="one">One</label>
+            <br>
+            <input type="radio" id="two" value="2" v-model="picked">
+            <label for="two">Two</label>
+            <br>
+            <span>선택: {{ picked }}</span>
+        </details>
+        <details>
+            <summary>Select</summary>
+            <select v-model="selected">
+                <option disabled value="">Please select one</option>
+                <option>A</option>
+                <option>B</option>
+                <option>C</option>
+            </select>
+            <span>선택함: {{ selected }}</span>
+            <hr>
+            <select v-model="multiSelected" multiple>
+                <option value="a">A</option>
+                <option value="b">B</option>
+                <option value="c">C</option>
+            </select>
+            <br>
+            <span>multiSelected: {{ multiSelected }}</span>
+            <hr>
+            <select v-model="selected2">
+                <option v-for="option in options" v-bind:value="option.value">
+                    {{ option.text }}
+                </option>
+            </select>
+            <span>Selected: {{ selected2 }}</span>
+        </details>
+        <details>
+            <summary>Value Bindings - 잘 이해안됨</summary>
+            처음에는 그냥 true or false 로 되네.
+            <br>
+            <input type="checkbox" v-model="toggle" v-bind:true-value="a" v-bind:false-value="b"> {{ toggle }}
+            <hr>
+            <input type="radio" v-model="pick" v-bind:value="a"> {{ pick }}
+            <hr>
+            <select v-model="selected3">
+                <option disabled value="">Please select one</option>
+                <option v-bind:value="{ number: 123 }">123</option>
+            </select>
+            {{ selected3 }}
+        </details>
+        <details>
+            <summary>Modifiers</summary>
+            v-model.lazy: synced after "change" instead of "input"
+            <br>
+            <input v-model.lazy="msg"> {{ msg }}
+            <hr>
+            <input v-model.number="age" type="number"> {{ age }}
+            <hr>
+            <input v-model.trim="msg"> {{ msg }}
+        </details>
     </div>
-
+    <br>
+    <br>
+    <br>
+    <br>
     <!-- where the rear which dom rendering is completed -->
     <script type="text/javascript " src="app01.js "></script>
 </body>

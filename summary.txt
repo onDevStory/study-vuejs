@@ -147,3 +147,9 @@ https://kr.vuejs.org/v2/guide/events.html#수식어-키-목록
 
 https://kr.vuejs.org/v2/guide/events.html#마우스-버튼-수식어
   .left  .right  .middle
+
+Form Input Bindings (Basic Usage)
+  v-model will ignore the initial value, checked or selected attributes found on any form elements.
+  It will always treat the Vue instance data as the source of truth.
+  You should declare the initial value on the JavaScript side, inside the data option of your component.
+

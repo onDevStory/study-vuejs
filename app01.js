@@ -60,7 +60,26 @@ var vm = new Vue({
 		},
 		numbers: [1, 2, 3, 4, 5],
 		counter: 0,
-		name: 'Vue.js'
+		name: 'Vue.js',
+		message: '',
+		longMessage: '',
+		checked: false,
+		checkedNames: [],
+		picked: '',
+		selected: '',
+		multiSelected: [],
+		selected2: 'A',
+		options: [
+			{ text: 'One', value: 'A' },
+			{ text: 'Two', value: 'B' },
+			{ text: 'Three', value: 'C' }
+		],
+		toggle: false,
+		a: 'Vue',
+		b: 'Angular',
+		pick: '',
+		selected3: '',
+		age: null
 	},
 	methods: {
 		getBoolean: function() {
