@@ -102,3 +102,16 @@ https://kr.vuejs.org/v2/guide/list.html#v-for와-v-if
 
 https://kr.vuejs.org/v2/guide/list.html#key
 
+Array Chane Detection
+  https://kr.vuejs.org/v2/guide/list.html#변이-메소드
+    push(), pop(), shift(), unshift(), splice(), sort(), reverse()
+    ex) vm.items.push({ message: 'Baz' })
+
+  https://kr.vuejs.org/v2/guide/list.html#배열-대체
+    filter(), concat(), slice()
+    ex) example1.items = example1.items.filter(function (item) {
+          return item.message.match(/Foo/)
+        })
+  https://kr.vuejs.org/v2/guide/list.html#주의-사항
+    
+    
