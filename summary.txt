@@ -113,5 +113,5 @@ Array Chane Detection
           return item.message.match(/Foo/)
         })
   https://kr.vuejs.org/v2/guide/list.html#주의-사항
-    
-    
+
+https://kr.vuejs.org/v2/guide/list.html#필터링-정렬-된-결과-표시하기

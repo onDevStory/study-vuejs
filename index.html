@@ -225,6 +225,16 @@
                 <span v-for="n in 10">{{ n }} </span>
             </div>
         </details>
+        <details>
+            <summary>Displaying Filtered/Sorted Results</summary>
+            <div>
+                <li v-for="n in evenNumbers">{{ n }}</li>
+            </div>
+            <hr>
+            <div>
+                <li v-for="n in even(numbers)">{{ n }}</li>
+            </div>
+        </details>
     </div>
 
     <!-- where the rear which dom rendering is completed -->

@@ -57,11 +57,17 @@ var vm = new Vue({
 			firstName: 'John',
 			lastName: 'Doe',
 			age: 30
-		}
+		},
+		numbers: [1, 2, 3, 4, 5]
 	},
 	methods: {
 		getBoolean: function() {
 			return true;
+		},
+		even: function(numbers) {
+			return numbers.filter(function(number) {
+				return number % 2 === 0
+			})
 		}
 	},
 	filters: {
@@ -97,6 +103,11 @@ var vm = new Vue({
 					fontSize: '20px'
 				}
 			}
+		},
+		evenNumbers: function() {
+			return this.numbers.filter(function(number) {
+				return number % 2 === 0
+			})
 		}
 	}
 })
