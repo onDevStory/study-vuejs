@@ -63,9 +63,15 @@
                 </details>
             </div>
         </details>
-        <details>
+        <details open>
             <summary>Custom Events</summary>
             <div>Using v-on with Custom Events</div>
+            <button-counter v-on:increment="incrementTotal"></button-counter>
+            <button-counter v-on:increment="incrementTotal"></button-counter>
+            Total: {{ total }}
+            <br> Binding Native Events to Components:
+            <button-counter v-on:click.native="nativeEvent"></button-counter>
+            <hr>
         </details>
     </div>
     <script type="text/javascript" src="componentEx.js"></script>
