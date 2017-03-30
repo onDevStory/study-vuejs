@@ -64,6 +64,39 @@ Vue.component('button-counter', {
 	},
 })
 
+Vue.component('currency-input', {
+	template: `
+    <span>
+      $
+      <input
+        ref="input"
+        v-bind:value="value"
+        v-on:input="updateValue($event.target.value)">
+    </span>
+  `,
+	props: ['value'],
+	methods: {
+		// Instead of updating the value directly, this
+		// method is used to format and place constraints
+		// on the input's value
+		updateValue: function(value) {
+			console.log(value)
+			var formattedValue = value
+				// Remove whitespace on either side
+				.trim()
+				// Shorten to 2 decimal places
+				.slice(0, value.indexOf('.') + 3)
+				// If the value was not already normalized,
+				// manually override it to conform
+			if (formattedValue !== value) {
+				this.$refs.input.value = formattedValue
+			}
+			// Emit the number value through the input event
+			this.$emit('inputEvt', Number(formattedValue))
+		}
+	}
+})
+
 // create a root instance
 var vm = new Vue({
 	el: '#component-example',
@@ -78,7 +111,8 @@ var vm = new Vue({
 			lang: 'VueJS',
 			version: '2.2.0'
 		},
-		total: 0
+		total: 0,
+		price: ''
 	},
 	methods: {
 		incrementTotal: function() {

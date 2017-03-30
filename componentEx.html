@@ -65,12 +65,22 @@
         </details>
         <details open>
             <summary>Custom Events</summary>
-            <div>Using v-on with Custom Events</div>
-            <button-counter v-on:increment="incrementTotal"></button-counter>
-            <button-counter v-on:increment="incrementTotal"></button-counter>
-            Total: {{ total }}
-            <br> Binding Native Events to Components:
-            <button-counter v-on:click.native="nativeEvent"></button-counter>
+            <div>
+                Using v-on with Custom Events
+                <br>
+                <button-counter v-on:increment="incrementTotal"></button-counter>
+                <button-counter v-on:increment="incrementTotal"></button-counter>
+                Total: {{ total }}
+                <br> Binding Native Events to Components:
+                <button-counter v-on:click.native="nativeEvent"></button-counter>
+            </div>
+            <hr>
+            <div>
+                Form Input Components using Custom Events
+                <br> Example 1
+                <br>
+                <currency-input v-model="price"></currency-input>
+            </div>
             <hr>
         </details>
     </div>
