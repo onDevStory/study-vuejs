@@ -173,3 +173,8 @@ https://kr.vuejs.org/v2/guide/components.html#Props로-데이터-전달하기
   데이터와 마찬가지로 prop은 템플릿 내부에서 사용할 수 있으며
   vm의 this.message로 사용할 수 있습니다. ?? 예제가 필요해...
 
+https://kr.vuejs.org/v2/guide/components.html#camelCase-vs-kebab-case
+  HTML attributes are case-insensitive, so when using non-string templates,
+  camelCased prop names need to use their kebab-case (hyphen-delimited).
+
+  

@@ -12,10 +12,11 @@ var Child = {
 }
 
 Vue.component('child', {
-	props: ['message'],
+	// camelCase in JavaScript
+	props: ['myMessage'],
 	// just like data, the prop can be used inside templates
 	// and is also made available in the vm as this.message
-	template: '<span>{{message}}</span>'
+	template: '<span>{{myMessage}}</span>'
 })
 
 // create a root instance
