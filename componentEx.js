@@ -24,5 +24,8 @@ var vm = new Vue({
 	el: '#component-example',
 	components: {
 		'child-component': Child
+	},
+	data: {
+		parentMsg: 'Welcome!'
 	}
 })
