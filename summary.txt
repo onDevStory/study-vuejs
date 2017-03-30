@@ -160,3 +160,7 @@ Form Input Bindings (Basic Usage)
       동일한 캡슐화는 디렉티브와 같은 다른 등록 가능한 Vue 기능에도 적용됩니다. ??
     DOM Template Parsing Caveats
       이해 안됨.
+
+https://kr.vuejs.org/v2/guide/components.html#data-는-반드시-함수여야합니다
+  컴포넌트 인스턴스가 같은 데이터를 공유하게 할 수도 안할 수도 있음. 소스참조.
+  

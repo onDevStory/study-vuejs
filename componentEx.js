@@ -1,6 +1,9 @@
 // register a global component.
 Vue.component('my-component', {
-	template: '<div>A custom component!</div>'
+	template: '<button v-on:click="counter += 1">{{ counter }}</button>',
+	data: function() {
+		return { counter: 0 }
+	}
 })
 
 // register a local component
