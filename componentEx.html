@@ -9,57 +9,64 @@
 
 <body>
     <div id="component-example">
-        <h3>Using Components</h3>
-        <my-component></my-component>
-        <my-component></my-component>
-        <my-component></my-component>
+        <details>
+            <summary>Using Components</summary>
+            <my-component></my-component>
+            <my-component></my-component>
+            <my-component></my-component>
 
-        <child-component></child-component>
-        <hr>
-        <h3>Props</h3>
-        <div>
-            Literal Props:
-            <!-- kebab-case in HTML -->
-            <child my-message="hello!"></child>
-        </div>
-        <br>
-        <div>
-            Dynamic Props:
-            <input v-model="parentMsg">
-            <child :my-message="parentMsg"></child>
-        </div>
-        <br>
-        <div>
-            How to pass down a number:
+            <child-component></child-component>
+        </details>
+        <details>
+            <summary>Props</summary>
+            <div>
+                Literal Props:
+                <!-- kebab-case in HTML -->
+                <child my-message="hello!"></child>
+            </div>
             <br>
-            <child my-message="10"></child>
+            <div>
+                Dynamic Props:
+                <input v-model="parentMsg">
+                <child :my-message="parentMsg"></child>
+            </div>
             <br>
-            <child :my-message="20"></child>
+            <div>
+                How to pass down a number:
+                <br>
+                <child my-message="10"></child>
+                <br>
+                <child :my-message="20"></child>
+                <br>
+                <child :my-message="number"></child>
+            </div>
             <br>
-            <child :my-message="number"></child>
-        </div>
-        <br>
-        <div>
-            How to define a local data property by using props.
-            <br> initial-counter="0" vs. :initial-counter="1"
+            <div>
+                How to define a local data property by using props.
+                <br> initial-counter="0" vs. :initial-counter="1"
+                <br>
+                <my-component initial-counter="0"></my-component>
+                <my-component :initial-counter="1"></my-component>
+            </div>
             <br>
-            <my-component initial-counter="0"></my-component>
-            <my-component :initial-counter="1"></my-component>
-        </div>
-        <br>
-        <div>
-            Note that objects and arrays in JavaScript are passed by reference,
-            <br>so if the prop is an array or object, mutating the object or array itself inside the child will affect parent state.
-            <details open>
-                <summary>Parent</summary>
-                Parent arrNumber: {{ arrNumber }}
-                <br>Parent obj: {{ obj }}
-            </details>
-            <details open>
-                <summary>Child</summary>
-                <exam01 :arr-number="arrNumber" :obj="obj"></exam01>
-            </details>
-        </div>
+            <div>
+                Note that objects and arrays in JavaScript are passed by reference,
+                <br>so if the prop is an array or object, mutating the object or array itself inside the child will affect parent state.
+                <details open>
+                    <summary>Parent</summary>
+                    Parent arrNumber: {{ arrNumber }}
+                    <br>Parent obj: {{ obj }}
+                </details>
+                <details open>
+                    <summary>Child</summary>
+                    <exam01 :arr-number="arrNumber" :obj="obj"></exam01>
+                </details>
+            </div>
+        </details>
+        <details>
+            <summary>Custom Events</summary>
+            <div>Using v-on with Custom Events</div>
+        </details>
     </div>
     <script type="text/javascript" src="componentEx.js"></script>
 </body>
