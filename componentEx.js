@@ -11,8 +11,15 @@ var Child = {
 	template: '<div>A local component!</div>'
 }
 
+Vue.component('child', {
+	props: ['message'],
+	// just like data, the prop can be used inside templates
+	// and is also made available in the vm as this.message
+	template: '<span>{{message}}</span>'
+})
+
 // create a root instance
-new Vue({
+var vm = new Vue({
 	el: '#component-example',
 	components: {
 		'child-component': Child
