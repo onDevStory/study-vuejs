@@ -97,6 +97,49 @@ Vue.component('currency-input', {
 	}
 })
 
+Vue.component('currency-input2', {
+	template: `
+    <div>
+      <label v-if="label">{{ label }}</label>
+      $
+      <input ref="input" v-bind:value="value" v-on:input="updateValue($event.target.value)"
+             v-on:focus="selectAll" v-on:blur="formatValue">
+    </div>
+  `,
+	props: {
+		label: {
+			type: String,
+			default: ''
+		},
+		value: {
+			type: Number,
+			default: 0
+		}
+	},
+	mounted: function() {
+		this.formatValue()
+	},
+	methods: {
+		updateValue: function(value) {
+			var result = currencyValidator.parse(value, this.value)
+			if (result.warning) {
+				this.$refs.input.value = result.value
+			}
+			this.$emit('input', result.value)
+		},
+		formatValue: function() {
+			this.$refs.input.value = currencyValidator.format(this.value)
+		},
+		selectAll: function(event) {
+			// Workaround for Safari bug
+			// http://stackoverflow.com/questions/1269722/selecting-text-on-focus-using-jquery-not-working-in-safari-and-chrome
+			setTimeout(function() {
+				event.target.select()
+			}, 0)
+		}
+	}
+})
+
 // create a root instance
 var vm = new Vue({
 	el: '#component-example',
@@ -112,7 +155,10 @@ var vm = new Vue({
 			version: '2.2.0'
 		},
 		total: 0,
-		price: ''
+		price: 0,
+		shipping: 0,
+		handling: 0,
+		discount: 0
 	},
 	methods: {
 		incrementTotal: function() {
@@ -120,6 +166,12 @@ var vm = new Vue({
 		},
 		nativeEvent: function() {
 			alert('nativeEvent')
+		}
+	},
+	computed: {
+		computedTotal: function() {
+			return (
+				(this.price * 100 + this.shipping * 100 + this.handling * 100 - this.discount * 100) / 100).toFixed(2)
 		}
 	}
 })

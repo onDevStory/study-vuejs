@@ -5,6 +5,7 @@
     <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
     <title>Component Example</title>
     <script type="text/javascript" src="https://unpkg.com/vue"></script>
+    <script src="https://cdn.rawgit.com/chrisvfritz/5f0a639590d6e648933416f90ba7ae4e/raw/98739fb8ac6779cb2da11aaa9ab6032e52f3be00/currency-validator.js"></script>
 </head>
 
 <body>
@@ -80,6 +81,13 @@
                 <br> Example 1
                 <br>
                 <currency-input v-model="price"></currency-input>
+                <hr> Example 2
+                <br>
+                <currency-input2 label="Price" v-model="price"></currency-input2>
+                <currency-input2 label="Shipping" v-model="shipping"></currency-input2>
+                <currency-input2 label="Handling" v-model="handling"></currency-input2>
+                <currency-input2 label="Discount" v-model="discount"></currency-input2>
+                <p>Total: ${{ computedTotal }}</p>
             </div>
             <hr>
         </details>
