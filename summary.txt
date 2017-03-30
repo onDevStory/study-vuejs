@@ -177,4 +177,8 @@ https://kr.vuejs.org/v2/guide/components.html#camelCase-vs-kebab-case
   HTML attributes are case-insensitive, so when using non-string templates,
   camelCased prop names need to use their kebab-case (hyphen-delimited).
 
+https://kr.vuejs.org/v2/guide/components.html#리터럴-vs-동적
+  어차피 화면에 뿌려지는 거면 string 이든 number 든 똑같을텐데,
+  component 안에서 myMessage 란 변수를 직접 사용하는 예제가 있었다면!
+
   

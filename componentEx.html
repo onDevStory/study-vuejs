@@ -28,6 +28,16 @@
             <input v-model="parentMsg">
             <child :my-message="parentMsg"></child>
         </div>
+        <br>
+        <div>
+            How to pass down a number:
+            <br>
+            <child my-message="10"></child>
+            <br>
+            <child :my-message="20"></child>
+            <br>
+            <child :my-message="number"></child>
+        </div>
     </div>
     <script type="text/javascript" src="componentEx.js"></script>
 </body>

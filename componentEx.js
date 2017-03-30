@@ -16,7 +16,7 @@ Vue.component('child', {
 	props: ['myMessage'],
 	// just like data, the prop can be used inside templates
 	// and is also made available in the vm as this.message
-	template: '<span>{{myMessage}}</span>'
+	template: '<span>{{myMessage + \' (this type is \' + typeof myMessage + \')\'}}</span>'
 })
 
 // create a root instance
@@ -26,6 +26,7 @@ var vm = new Vue({
 		'child-component': Child
 	},
 	data: {
-		parentMsg: 'Welcome!'
+		parentMsg: 'Welcome!',
+		number: 30
 	}
 })
