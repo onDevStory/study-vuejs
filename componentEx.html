@@ -38,6 +38,28 @@
             <br>
             <child :my-message="number"></child>
         </div>
+        <br>
+        <div>
+            How to define a local data property by using props.
+            <br> initial-counter="0" vs. :initial-counter="1"
+            <br>
+            <my-component initial-counter="0"></my-component>
+            <my-component :initial-counter="1"></my-component>
+        </div>
+        <br>
+        <div>
+            Note that objects and arrays in JavaScript are passed by reference,
+            <br>so if the prop is an array or object, mutating the object or array itself inside the child will affect parent state.
+            <details open>
+                <summary>Parent</summary>
+                Parent arrNumber: {{ arrNumber }}
+                <br>Parent obj: {{ obj }}
+            </details>
+            <details open>
+                <summary>Child</summary>
+                <exam01 :arr-number="arrNumber" :obj="obj"></exam01>
+            </details>
+        </div>
     </div>
     <script type="text/javascript" src="componentEx.js"></script>
 </body>
