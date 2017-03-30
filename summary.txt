@@ -183,3 +183,5 @@ https://kr.vuejs.org/v2/guide/components.html#리터럴-vs-동적
 
   https://kr.vuejs.org/v2/guide/components.html#단방향-데이터-흐름
 
+https://kr.vuejs.org/v2/guide/components.html#Prop-검증
+
