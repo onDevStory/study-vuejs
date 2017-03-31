@@ -185,3 +185,6 @@ https://kr.vuejs.org/v2/guide/components.html#리터럴-vs-동적
 
 https://kr.vuejs.org/v2/guide/components.html#Prop-검증
 
+https://kr.vuejs.org/v2/guide/components.html#컴포넌트의-v-model-사용자-정의
+  이해안됨.
+

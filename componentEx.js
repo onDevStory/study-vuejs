@@ -92,7 +92,7 @@ Vue.component('currency-input', {
 				this.$refs.input.value = formattedValue
 			}
 			// Emit the number value through the input event
-			this.$emit('inputEvt', Number(formattedValue))
+			this.$emit('input', Number(formattedValue) + 1)
 		}
 	}
 })
