@@ -1,0 +1,8 @@
+# vue-cli and setup-project
+  1.npm install -g vue-cli
+    https://github.com/vuejs/vue-cli
+  2.vue init webpack-simple vue-cli
+    Enter * 4
+    https://github.com/vuejs/vue-cli#official-templates
+  3.npm run dev
+
