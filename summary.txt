@@ -9,4 +9,5 @@
 # Prop Validation
   https://vuejs.org/v2/guide/components.html#Prop-Validation
 
-  
+# callback 형식으로 하면 console error 안나네.. why??
+
