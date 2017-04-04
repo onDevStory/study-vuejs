@@ -10,6 +10,10 @@
 </template>
 
 <script>
+import {
+	eventBus
+} from '../main';
+
 export default {
 	props: {
 		userName: {
@@ -28,6 +32,11 @@ export default {
 			this.userName = 'Max';
 			this.$emit('nameWasReset', this.userName);
 		}
+	},
+	created: function() {
+		eventBus.$on('ageWasEdited', (age) => {
+			this.userAge = age;
+		});
 	}
 }
 </script>
